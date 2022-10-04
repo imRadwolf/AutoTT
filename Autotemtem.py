@@ -50,7 +50,7 @@ class fight_detector(threading.Thread):
         global cnt_f
         modes=[temtem_utils.luma_finding,temtem_utils.exp_training,temtem_utils.weekly_release,temtem_utils.radar]
         if not (pyautogui.pixelMatchesColor(1790, 40,(60,232,234))):
-            print(f"開始第{cnt_f}次戰鬥")
+            print(f"Start{cnt_f}fight")
             self.flag.running=False
             self.flag.program_running=modes[self.mode-1]()
             self.flag.running=True
@@ -77,14 +77,14 @@ class keyboard_detector():
     def on_press(self,key):
         if key == self.key:
             if self.flag.running:
-                print("暫停")
+                print("Pause")
                 self.flag.running=False
             else:
-                print("開始")
+                print("Start")
                 self.flag.running=True
     
         if key == self.key_exit:
-            print('離開腳本')
+            print('Exit')
             self.flag.program_running=False
             exit()
 
@@ -102,7 +102,7 @@ class AutoTemtem():
     Args:
         key : the key to stop or start this script.
         key_exit : the key to close this script.\n
-        mode : 
+        mode :
             1 : Luma finding.\n
             2 : Auto level training.\n
             3 : Release the Hazrat in Braeside Castle weekly.\n
@@ -125,9 +125,9 @@ class AutoTemtem():
         self.keyboard.stop()
 
 if __name__=='__main__':
-    mode=int(input("1.色違尋找模式\n2.自動練等模式\n3.每周釋放\n4.雷達模式\n5.測試補卡功能\n請選擇模式:"))
+    mode=int(input("1.Luma hunt\n2.XP Training\n3.Hazrat Freetem\n4.Mode radar\n5.Feature reload test\nSelect a choice:"))
     if mode ==5:
-        print("請按e開始")
+        print("Press \"e\" to start")
         keyboard.wait('e')
         temtem_utils.buy_temcard()
     else:

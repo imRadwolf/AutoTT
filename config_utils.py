@@ -10,14 +10,14 @@ buy='buy'
 cnt_c=0
 
 down=False
-down_str='右邊'
+down_str='Right'
 
 E='E'
 enemy=True
-enemy_str='敵方'
+enemy_str='Enemy'
 
 friend=False
-friend_str='友方'
+friend_str='Ally'
 
 luma='luma'
 
@@ -28,7 +28,7 @@ release='release'
 switch='switch'
 
 top=True
-top_str='左邊'
+top_str='left'
 target_str=''
 temcard_plus='temcard_plus'
 
